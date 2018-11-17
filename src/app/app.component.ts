@@ -1,10 +1,23 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styles: [
+    `
+      .position {
+        color: white;
+      }
+    `
+  ]
 })
 export class AppComponent {
-  title = 'my-third-excercise-the-basics';
+  countLogs = [];
+  displayHidden = false;
+
+  ngClick() {
+    this.displayHidden = !this.displayHidden;
+
+    this.countLogs.push(this.countLogs.length + 1);
+  }
 }
